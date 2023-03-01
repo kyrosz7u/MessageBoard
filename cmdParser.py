@@ -4,12 +4,10 @@ class cmdParser:
     def __init__(self):
         self.cmdDict = dict()
 
-    def addCmd(self, cmdStr:str):
-        def decorator(view_func: Callable[[List[str]], int]):
-            if len(cmdStr) != 0:
-                self.cmdDict[cmdStr] = view_func
-            return view_func
-        return decorator
+    def addCmd(self, cmdStr:str, callback):
+        if len(cmdStr) != 0:
+            self.cmdDict[cmdStr] = callback
+
 
     def parserCmd(self):
         print('>> ', end='')

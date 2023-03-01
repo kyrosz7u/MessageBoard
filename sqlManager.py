@@ -22,5 +22,5 @@ class SQLManager:
             return res, data
         except:
             self.db.rollback()  # 当代码出现错误时，进行回滚
-            # print(pymysql.Error.args[0], pymysql.Error.args[1])
+            print(pymysql.Error.args[0], pymysql.Error.args[1])
 
